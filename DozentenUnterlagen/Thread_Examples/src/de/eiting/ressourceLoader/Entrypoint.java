@@ -16,7 +16,7 @@ public class Entrypoint {
 		frame.addImage("file_03.png", new Point(512, 32));
 		
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

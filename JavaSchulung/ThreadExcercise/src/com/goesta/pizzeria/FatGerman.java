@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class FatGerman implements Runnable {
 
-	private ArrayList<String> pizzaList;
+	private final ArrayList<String> pizzaList;
 
 	private String name;
 
@@ -23,7 +23,7 @@ public class FatGerman implements Runnable {
 
 	public synchronized ArrayList<String> eatPizza(ArrayList<String> pizzaList) {
 		synchronized (pizzaList) {
-			if (pizzaList.size() > 0) {
+			while (pizzaList.size() > 0) {
 				String pizza = pizzaList.get(0);
 				pizzaList.remove(0);
 				System.out.println(this.name + ": I had a nice pizza "

@@ -30,7 +30,7 @@ public class ImageLoader implements Runnable {
 			e1.printStackTrace();
 		}
 		
-		if(!IMAGES.containsKey(filename) || (IMAGES.containsKey(filename) && IMAGES.get(filename).get() == null)){
+		if(!IMAGES.containsKey(filename) || (IMAGES.containsKey(filename) && IMAGES.get(filename).get() == null)){	
 			try {
 				image = ImageIO.read(new File(filename));
 			} catch (IOException e) {

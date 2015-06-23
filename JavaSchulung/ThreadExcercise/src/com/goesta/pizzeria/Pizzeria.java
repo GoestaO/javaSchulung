@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Pizzeria implements Runnable {
 
-	private String[] pizzaNamen = new String[] { "Salami", "Margharita",
+	private final String[] PIZZAS = new String[] { "Salami", "Margharita",
 			"Calzone" };
 
-	private ArrayList<String> pizzaList;
+	private final ArrayList<String> pizzaList;
 
 	public Pizzeria(ArrayList<String> pizzaList) {
 		this.pizzaList = pizzaList;
@@ -15,7 +15,7 @@ public class Pizzeria implements Runnable {
 
 	public synchronized ArrayList<String> makePizza(ArrayList<String> pizzaList) {
 		int randomInt = (int) (Math.random() * 3);
-		String pizza = pizzaNamen[randomInt];
+		String pizza = PIZZAS[randomInt];
 		pizzaList.add(pizza);
 		System.out.println("Pizza " + pizza + " prepared. New list size is "
 				+ pizzaList.size());

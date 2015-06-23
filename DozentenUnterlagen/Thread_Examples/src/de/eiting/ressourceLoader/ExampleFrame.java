@@ -56,7 +56,16 @@ public class ExampleFrame extends JFrame implements Runnable {
 			
 			System.out.println("RESOURCES[ " + ImageLoader.IMAGES.size() + " ]" );
 			
+			ArrayList<String> keys = new ArrayList<String>(ImageLoader.IMAGES.keySet());
+			
+			for (String string : keys) {
+				if(ImageLoader.IMAGES.containsKey(string) && ImageLoader.IMAGES.get(string).get() == null){
+					ImageLoader.IMAGES.remove(string);
+				}
+			}
+			
 			System.gc();
+			
 			
 		}
 	}
