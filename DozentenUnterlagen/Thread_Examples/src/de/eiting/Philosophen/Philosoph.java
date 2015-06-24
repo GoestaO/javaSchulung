@@ -32,9 +32,6 @@ public class Philosoph implements Runnable {
 				if (!theOtherFork.isInUse()) {
 					synchronized (theOtherFork) {
 						theOtherFork.setInUse(true);
-						System.out.println(name + " nimmt sich die Gabel von "
-								+ next.name + " ...");
-
 						if (plate.getFoodAmount() > 0) {
 							synchronized (plate) {
 								lockObj.writeLock().lock();
@@ -44,7 +41,7 @@ public class Philosoph implements Runnable {
 							}
 						} else {
 							System.out.println("Essen ist alle...");
-							isSittingAtTable = false;
+							isSittingAtTable = false;	
 						}
 						try {
 							Thread.sleep((long) (200 * Math.random()));
@@ -68,6 +65,7 @@ public class Philosoph implements Runnable {
 				}
 			}
 		}
+		System.out.println("TEST");
 
 	}
 

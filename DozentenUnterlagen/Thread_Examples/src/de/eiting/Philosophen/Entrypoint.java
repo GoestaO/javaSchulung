@@ -28,5 +28,6 @@ public class Entrypoint {
 		restaurantManager.submit(p3);
 		restaurantManager.submit(p4);
 		restaurantManager.submit(p5);
+		restaurantManager.shutdown();
 	}
 }
